@@ -1,0 +1,176 @@
+* {
+    margin: 0px;
+}
+
+body {
+    /*  display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    background-image: url('To do.jpg');
+    justify-content: start;
+    align-items: center;*/
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start
+}
+
+body:before {
+    content: "";
+    position: absolute;
+    background-image: url('To do.jpg');
+    background-size: cover;
+    z-index: -1;
+    /* Keep the background behind the content */
+    height: 20%;
+    width: 20%;
+    /* Using Glen Maddern's trick /via @mente */
+    /* don't forget to use the prefixes you need */
+    transform: scale(5);
+    transform-origin: top;
+    filter: blur(1px);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 200%;
+    height: 30vh;
+    background-color: rgb(119, 69, 54);
+    opacity: 0.9;
+    font-family: monospace;
+    align-items: center;
+    border: 0px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    position: relative;
+    right: 30vh;
+    font-weight: 100;
+}
+
+.container h1 {
+    font-size: 87px;
+    opacity: 100;
+}
+
+.content {
+    padding: 20px;
+    width: 200%;
+    position: relative;
+    right: 32vh;
+}
+
+form {
+    display: flex;
+    flex-direction: row;
+}
+
+.input {
+    display: block;
+    width: 100%;
+    padding: 20px;
+    border: none;
+    font-size: 25px;
+    background-color: rgb(119, 69, 54, 0.7);
+    font-weight: 100;
+    font-family: monospace;
+}
+
+.input::placeholder {
+    color: rgb(48, 48, 48);
+}
+
+form .input:focus {
+    border: 2px solid rgb(119, 69, 54, 0.9);
+    color: rgb(255, 255, 255);
+    background-color: rgb(119, 69, 54, 0.9);
+    outline: none;
+}
+
+form .btn {
+    width: 75px;
+    color: black(88, 43, 13, 0.7);
+    background-color: rgb(119, 69, 54, 0.7);
+    border: 0px;
+    cursor: pointer;
+    transition: all 0.5 ease;
+}
+
+form .btn:hover {
+    color: white;
+    background-color: rgb(88, 43, 13, 0.7);
+}
+
+form .btn:focus {
+    outline: none;
+}
+
+
+/*list */
+
+.listcontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.list {
+    min-width: 100%;
+    list-style: none;
+}
+
+.todoDiv {
+    background-color: rgb(119, 69, 54, 0.7);
+    margin: 30px;
+    color: black;
+    font-family: monospace;
+    position: relative;
+    right: 19px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 25px;
+    padding: 10px;
+    transition: .3s ease;
+}
+
+.todoDiv li {
+    flex: 0.96;
+    transition: 0.5s ease;
+}
+
+.donebtn,
+.delbtn {
+    border: none;
+    padding: .5rem;
+    background: rgb(119, 69, 54, 0.0);
+    cursor: pointer;
+    size: 1rem;
+}
+
+.fa-trash,
+.fa-check {
+    pointer-events: none;
+}
+
+.delbtn,
+.donebtn:focus {
+    outline: none;
+}
+
+.completed {
+    text-decoration: line-through;
+    opacity: 0.2;
+}
+
+.delanimation {
+    transform: rotateX(90deg);
+    opacity: 0;
+}
